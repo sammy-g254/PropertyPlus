@@ -1,15 +1,16 @@
 package com.sammyg.propertyplus.ui.theme.screens.service
 
-import android.app.Service
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 
 @Composable
-fun ServiceScreen(){
+fun ServiceScreen(navController: NavController){
     Column (
         modifier = Modifier.fillMaxSize()
 
@@ -21,5 +22,5 @@ fun ServiceScreen(){
 @Preview(showBackground = true)
 @Composable
 fun ServiceScreenPreview(){
-    ServiceScreen()
+    ServiceScreen(rememberNavController())
 }

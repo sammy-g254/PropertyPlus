@@ -26,11 +26,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.sammyg.propertyplus.navigation.ROUT_CONTACT
 import com.sammyg.propertyplus.ui.theme.brightGreen
 import java.nio.file.WatchEvent
 
 @Composable
-fun HomeScreen(){
+fun HomeScreen(navController: NavController){
     Column (
         modifier = Modifier
             .fillMaxSize()
@@ -60,10 +63,14 @@ fun HomeScreen(){
             //fontWeight = FontWeight.Black
         )
         Button(
-            onClick = {},
+            onClick = {
+                navController.navigate(ROUT_CONTACT)
+            },
             colors = ButtonDefaults.buttonColors(brightGreen)
         ) {
-            Text(text = "Get Started")
+            Text(
+                text = "Get Started"
+            )
         }
     }
 }
@@ -73,5 +80,5 @@ fun HomeScreen(){
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenPreview(){
-    HomeScreen()
+    HomeScreen(rememberNavController())
 }
