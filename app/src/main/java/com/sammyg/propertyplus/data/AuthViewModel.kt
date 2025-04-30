@@ -10,6 +10,7 @@ import com.sammyg.propertyplus.navigation.ROUT_SIGNUP
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.sammyg.propertyplus.navigation.ROUT_ADD_PROPERTY
 
 
 class AuthViewModel(var navController: NavController, var context: Context){
@@ -57,7 +58,7 @@ class AuthViewModel(var navController: NavController, var context: Context){
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                 if (it.isSuccessful ){
                     Toast.makeText(this.context, "Success", Toast.LENGTH_SHORT).show()
-                    navController.navigate(ROUT_HOME)
+                    navController.navigate(ROUT_ADD_PROPERTY)
                 }else{
                     Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
                 }
